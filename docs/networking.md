@@ -23,7 +23,7 @@ The relevant output was:
 
 ```text
 lo       UNKNOWN   127.0.0.1/8 ::1/128
-enp0s3   UP        192.168.1.22/24
+enp0s3   UP        <SERVER_IP>/24
 ```
 
 ### Loopback Interface
@@ -45,11 +45,11 @@ enp0s3
 Its current IPv4 configuration is:
 
 ```text
-IP address: 192.168.1.22
+IP address: <SERVER_IP>
 Prefix: /24
 Subnet mask: 255.255.255.0
 Network: 192.168.1.0/24
-Broadcast: 192.168.1.255
+Broadcast: <BROADCAST_ADDRESS>
 ```
 
 The interface status is `UP`, meaning that it is active.
@@ -65,14 +65,14 @@ ip route
 Relevant routes:
 
 ```text
-default via 192.168.1.254 dev enp0s3
-192.168.1.0/24 dev enp0s3
+default via <DEFAULT_GATEWAY> dev enp0s3
+<LOCAL_SUBNET>dev enp0s3
 ```
 
 The default gateway is:
 
 ```text
-192.168.1.254
+<DEFAULT_GATEWAY>
 ```
 
 Traffic directed outside the local subnet is sent to this gateway.
@@ -84,7 +84,7 @@ Devices inside `192.168.1.0/24` can be reached directly through `enp0s3`.
 Connectivity to the default gateway was tested with:
 
 ```bash
-ping -c 4 192.168.1.254
+ping -c 4 <DEFAULT_GATEWAY>
 ```
 
 Result:
@@ -141,7 +141,7 @@ resolvectl status
 The current IPv4 DNS server was:
 
 ```text
-192.168.1.254
+<DEFAULT_GATEWAY>
 ```
 
 The router therefore acts as the DNS resolver or forwards DNS requests to an upstream resolver.
@@ -184,7 +184,7 @@ A default route was present through a link-local gateway on `enp0s3`.
 The IPv6 gateway was successfully reached with:
 
 ```bash
-ping -6 -c 4 fe80::3a07:16ff:fe1c:1e9d%enp0s3
+ping -6 -c 4 <IPV6_GATEWAY>%enp0s3
 ```
 
 Result:
@@ -247,7 +247,7 @@ An initial gateway test was accidentally executed using:
 instead of:
 
 ```text
-192.168.1.254
+<DEFAULT_GATEWAY>
 ```
 
 The incorrect address produced `100% packet loss`.
