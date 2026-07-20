@@ -48,7 +48,7 @@ Its current IPv4 configuration is:
 IP address: <SERVER_IP>
 Prefix: /24
 Subnet mask: 255.255.255.0
-Network: 192.168.1.0/24
+Network: <LOCAL_SUBNET>
 Broadcast: <BROADCAST_ADDRESS>
 ```
 
@@ -66,7 +66,7 @@ Relevant routes:
 
 ```text
 default via <DEFAULT_GATEWAY> dev enp0s3
-<LOCAL_SUBNET>dev enp0s3
+<LOCAL_SUBNET> dev enp0s3
 ```
 
 The default gateway is:
@@ -77,7 +77,7 @@ The default gateway is:
 
 Traffic directed outside the local subnet is sent to this gateway.
 
-Devices inside `192.168.1.0/24` can be reached directly through `enp0s3`.
+Devices inside `<LOCAL_SUBNET>` can be reached directly through `enp0s3`.
 
 ## Local Network Connectivity
 
