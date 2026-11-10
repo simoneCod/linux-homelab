@@ -1,85 +1,84 @@
 # Linux Home Lab
 
-A practical home-lab project used to study Linux system administration, networking and IT infrastructure.
+A hands-on environment for learning Linux system administration, networking and core IT infrastructure concepts.
 
-The lab is based on an **Ubuntu Server virtual machine** running in VirtualBox and managed remotely from a Windows host through SSH.
-
-## Objectives
-
-This repository documents my practical learning path toward junior roles in:
-
-* IT infrastructure;
-* Linux system administration;
-* networking;
-* cloud engineering;
-* DevOps and automation.
+The lab uses an **Ubuntu Server 24.04 LTS virtual machine** running in Oracle VirtualBox, administered from a Windows 11 host.
 
 ## Lab Environment
 
-### Host System
+| Component | Configuration |
+|---|---|
+| Host operating system | Windows 11 |
+| Virtualization | Oracle VirtualBox |
+| Guest operating system | Ubuntu Server 24.04 LTS |
+| Terminal | Windows PowerShell |
+| Remote access | OpenSSH |
+| Virtual network | NAT during initial setup, later Bridged Adapter |
 
-* Windows 11
-* VirtualBox
-* PowerShell
-* Visual Studio Code
-* Git and GitHub
+## Documentation
 
-### Virtual Machine
+The repository currently contains the following lab notes:
 
-* Ubuntu Server 24.04 LTS
-* OpenSSH Server
-* NAT and Bridged networking
-* Remote administration through SSH
+- [Ubuntu Server installation and initial setup](docs/installation.md)
+- [Network configuration and connectivity troubleshooting](docs/networking.md)
 
-## Topics Covered
+These documents describe the setup and tests actually performed in the lab.
 
-* Ubuntu Server installation and initial configuration
-* Package updates and repository management
-* Linux users and groups
-* File ownership and permissions
-* SSH installation and remote access
-* Processes and services
-* Network interfaces and IP addressing
-* Listening ports and active connections
-* Basic troubleshooting
+## Topics Practiced
+
+The environment is used to practise and explore:
+
+- Linux command-line navigation and file management;
+- package management with APT;
+- users, groups, ownership and permissions;
+- SSH remote administration;
+- processes and system services;
+- network interfaces, IP addressing and routing;
+- DNS resolution and connectivity troubleshooting.
+
+Documentation will be added as each topic is developed and verified.
 
 ## Commands Practiced
 
+Examples of commands used in the lab:
+
 ```bash
+pwd
+whoami
 ls
 cd
-pwd
 mkdir
 chmod
 chown
-ps
-pstree
+sudo apt update
+sudo apt upgrade
 systemctl
-ss
+ps
 ip
+ss
+ping
+resolvectl
 ssh
 ```
 
-## Current Lab Status
+## Current Status
 
-* Ubuntu Server installed successfully
-* System packages updated
-* OpenSSH Server installed and enabled
-* SSH access tested from Windows PowerShell
-* Network mode changed from NAT to Bridged
-* Virtual machine reachable through the local network
-* Basic users, permissions, services and networking commands tested
+- Ubuntu Server 24.04 LTS installed in VirtualBox.
+- Initial package updates completed.
+- OpenSSH Server installed and tested.
+- Remote SSH access tested from Windows PowerShell.
+- VirtualBox networking changed from NAT to Bridged Adapter.
+- IPv4 connectivity and DNS resolution tested.
+- Local IPv6 connectivity tested; external IPv6 connectivity was not working during the documented test.
 
-## Planned Improvements
+## Planned Work
 
-* Document the complete Ubuntu Server installation
-* Add networking and SSH configuration notes
-* Create practical user and permission exercises
-* Document services and process management
-* Add firewall configuration with UFW
-* Install and configure a web server
-* Introduce Docker
-* Add infrastructure troubleshooting scenarios
+- Add separate, verified notes for users, groups and permissions.
+- Document SSH configuration and safe remote-access practices.
+- Expand notes on processes and services.
+- Practise firewall configuration with UFW.
+- Deploy and configure a basic web server.
+- Continue with additional networking and system-administration exercises.
 
 ## Repository Structure
 
@@ -88,10 +87,11 @@ linux-homelab/
 ├── README.md
 └── docs/
     ├── installation.md
-    ├── networking.md
-    ├── ssh.md
-    ├── users-and-permissions.md
-    └── processes-and-services.md
+    └── networking.md
 ```
 
-The documentation will be expanded progressively as new labs and infrastructure topics are completed.
+## Purpose
+
+This repository is a learning log. It records practical exercises, command-line work, configuration steps and troubleshooting results as the lab develops.
+
+The notes are based on a local virtualized environment. Network addresses and results may differ on other systems.
